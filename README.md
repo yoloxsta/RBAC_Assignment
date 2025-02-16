@@ -142,3 +142,7 @@ On baby’s machine, update the kubeconfig to point to the external Minikube IP 
 ```
 kubectl config set-cluster minikube --server=https://<minikube-ip>:8443 --certificate-authority=/path/to/certs/ca.crt
 ```
+https://medium.com/@subhampradhan966/implementing-and-verifying-kubernetes-service-accounts-a-step-by-step-guide-c43b727260b2
+
+
+##
