@@ -145,5 +145,6 @@ kubectl config set-cluster minikube --server=https://<minikube-ip>:8443 --certif
 #### service account (medium)
 https://medium.com/@subhampradhan966/implementing-and-verifying-kubernetes-service-accounts-a-step-by-step-guide-c43b727260b2
 
+https://medium.com/@HoussemDellai/rbac-with-kubernetes-in-minikube-4deed658ea7b 
 
 ##
