@@ -56,9 +56,9 @@ kubectl config set-credentials baby \
 kubectl config set-context admin-context --cluster=minikube --user=admin
 kubectl config set-context baby-context --cluster=minikube --user=baby
 ```
-Step 5: Bind Roles to Users
+### Step 5: Bind Roles to Users
 Create a ClusterRoleBinding for admin:
-
+```
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
@@ -71,9 +71,9 @@ roleRef:
   kind: ClusterRole
   name: cluster-admin
   apiGroup: rbac.authorization.k8s.io
-
+```
 Create a ClusterRoleBinding for baby:
-
+```
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
@@ -86,16 +86,17 @@ roleRef:
   kind: ClusterRole
   name: read-only
   apiGroup: rbac.authorization.k8s.io
-
- Step 6: Test the Access
- 6.1 Test as Admin
-
+```
+### Step 6: Test the Access
+#### 6.1 Test as Admin
+```
 kubectl config use-context admin-context
 kubectl get pods --all-namespaces
 kubectl create namespace test-ns
 kubectl delete namespace test-ns
-
-6.2 Test as Baby
+```
+#### 6.2 Test as Baby
+```
 kubectl config use-context baby-context
 kubectl get pods -A
 kubectl create namespace test-ns
