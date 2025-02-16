@@ -101,3 +101,4 @@ kubectl config use-context baby-context
 kubectl get pods -A # ya,u can
 kubectl create namespace test-ns #Forbidden!
 ```
+## Assignment
