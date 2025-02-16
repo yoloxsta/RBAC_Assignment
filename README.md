@@ -101,4 +101,22 @@ kubectl config use-context baby-context
 kubectl get pods -A # ya,u can
 kubectl create namespace test-ns #Forbidden!
 ```
-## Assignment
+## Assignment-2
+Steps for Setting Up User Access for baby on Another Machine
+Step 1: Generate User Certificates for baby
+
+1. On your admin machine, create a private key and CSR (Certificate Signing Request) for baby:
+```
+openssl genrsa -out baby.key 2048
+openssl req -new -key baby.key -out baby.csr -subj "/CN=baby"
+openssl x509 -req -in baby.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out baby.crt -days 365
+
+## Now you have the following files:
+1.baby.key (private key)
+2.baby.crt (signed certificate)
+3.ca.crt (CA certificate)
+```
+Step 2: Transfer Certificates to baby Machine
+```
+scp baby.crt baby.key ca.crt user@baby-machine:/path/to/certs/
+```
