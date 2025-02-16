@@ -98,6 +98,6 @@ kubectl delete namespace test-ns
 #### 6.2 Test as Baby
 ```
 kubectl config use-context baby-context
-kubectl get pods -A
-kubectl create namespace test-ns
+kubectl get pods -A # ya,u can
+kubectl create namespace test-ns #Forbidden!
 ```
