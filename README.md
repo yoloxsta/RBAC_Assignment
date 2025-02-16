@@ -120,3 +120,25 @@ Step 2: Transfer Certificates to baby Machine
 ```
 scp baby.crt baby.key ca.crt user@baby-machine:/path/to/certs/
 ```
+Step 3: Configure baby's Kubeconfig on Their Machine
+```
+
+kubectl config set-credentials baby --client-certificate=/path/to/certs/baby.crt --client-key=/path/to/certs/baby.key
+kubectl config set-context baby-context --cluster=minikube --user=baby
+kubectl config use-context baby-context
+
+```
+Step 5: Optional - Enable Remote Access
+If your Minikube cluster is running locally and you want baby to access it from a different machine, you need to expose the Minikube API externally.
+
+Set up the Minikube API to be externally accessible by enabling port forwarding or exposing the Kubernetes API server through an external IP. One option is to use minikube tunnel to make Minikube’s Kubernetes cluster accessible.
+
+Run the following on the admin machine:
+```
+minikube tunnel #This will expose the Minikube API on an external IP (e.g., localhost:8443 or another accessible address).
+```
+On baby’s machine, update the kubeconfig to point to the external Minikube IP address (e.g., localhost:8443).
+
+```
+kubectl config set-cluster minikube --server=https://<minikube-ip>:8443 --certificate-authority=/path/to/certs/ca.crt
+```
