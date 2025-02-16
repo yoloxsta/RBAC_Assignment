@@ -103,7 +103,7 @@ kubectl create namespace test-ns #Forbidden!
 ```
 ## Assignment-2
 Steps for Setting Up User Access for baby on Another Machine
-Step 1: Generate User Certificates for baby
+### Step 1: Generate User Certificates for baby
 
 1. On your admin machine, create a private key and CSR (Certificate Signing Request) for baby:
 ```
@@ -116,11 +116,11 @@ openssl x509 -req -in baby.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out bab
 2.baby.crt (signed certificate)
 3.ca.crt (CA certificate)
 ```
-Step 2: Transfer Certificates to baby Machine
+### Step 2: Transfer Certificates to baby Machine
 ```
 scp baby.crt baby.key ca.crt user@baby-machine:/path/to/certs/
 ```
-Step 3: Configure baby's Kubeconfig on Their Machine
+### Step 3: Configure baby's Kubeconfig on Their Machine
 ```
 
 kubectl config set-credentials baby --client-certificate=/path/to/certs/baby.crt --client-key=/path/to/certs/baby.key
@@ -128,7 +128,7 @@ kubectl config set-context baby-context --cluster=minikube --user=baby
 kubectl config use-context baby-context
 
 ```
-Step 5: Optional - Enable Remote Access
+### Step 4: Optional - Enable Remote Access
 If your Minikube cluster is running locally and you want baby to access it from a different machine, you need to expose the Minikube API externally.
 
 Set up the Minikube API to be externally accessible by enabling port forwarding or exposing the Kubernetes API server through an external IP. One option is to use minikube tunnel to make Minikube’s Kubernetes cluster accessible.
