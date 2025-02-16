@@ -1,17 +1,17 @@
-## RBAC_Assignment
+# RBAC_Assignment
 
-### Assignment 1 (With Minikube)
+## Assignment 1 (With Minikube)
 
+### Step 1: Start Minikube
 ```
-Step 1: Start Minikube
-
 minikube start
 kubectl cluster-info #check status
+```
 
-Step 2: Create Admin and Read-Only Roles
+### Step 2: Create Admin and Read-Only Roles
 Kubernetes already has a built-in ClusterRole called cluster-admin. We’ll use that for the admin user.
 Save the following as read-only-role.yaml
-
+```
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
@@ -20,13 +20,14 @@ rules:
 - apiGroups: [""]
   resources: ["*"]
   verbs: ["get", "list", "watch"]
+```
 
-Step 3: Create Admin and Baby Users
+### Step 3: Create Admin and Baby Users
 Kubernetes doesn’t manage normal users directly — but you can simulate users with certificates.
 
-3.1 Generate Certificates
+#### 3.1 Generate Certificates
 Create a private key for each user:
-
+```
 openssl genrsa -out admin.key 2048
 openssl genrsa -out baby.key 2048
 
@@ -40,10 +41,10 @@ minikube ssh "sudo cat /var/lib/minikube/certs/ca.key" > ca.key
 ls -l ca.crt ca.key
 openssl x509 -req -in admin.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out admin.crt -days 365
 openssl x509 -req -in baby.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out baby.crt -days 365
-
-Step 4: Configure Kubernetes Users
-4.1 Add Users to Kubeconfig
-
+```
+### Step 4: Configure Kubernetes Users
+#### 4.1 Add Users to Kubeconfig
+```
 kubectl config set-credentials admin \
   --client-certificate=admin.crt \
   --client-key=admin.key
@@ -54,7 +55,7 @@ kubectl config set-credentials baby \
 
 kubectl config set-context admin-context --cluster=minikube --user=admin
 kubectl config set-context baby-context --cluster=minikube --user=baby
-
+```
 Step 5: Bind Roles to Users
 Create a ClusterRoleBinding for admin:
 
