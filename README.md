@@ -147,4 +147,18 @@ https://medium.com/@subhampradhan966/implementing-and-verifying-kubernetes-servi
 
 https://medium.com/@HoussemDellai/rbac-with-kubernetes-in-minikube-4deed658ea7b 
 
-## Assignment-3 (EKS)
+## Assignment-3 (EC2 access for multi-user)
+```
+ sudo adduser sta --disabled-password
+ sudo su - sta
+ mkdir ~/.ssh
+ chmod 700 ~/.ssh
+ ssh-keygen -t rsa -b 2048 -f ~/.ssh/sta_key
+ ls ~/.ssh
+ chmod 700 ~/.ssh
+ chmod 600 ~/.ssh/sta_key
+ chmod 600 ~/.ssh/sta_key.pub
+ cat ~/.ssh/sta_key.pub >> ~/.ssh/authorized_keys
+ chmod 600 ~/.ssh/authorized_keys
+ 
+```
