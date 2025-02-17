@@ -160,5 +160,13 @@ https://medium.com/@HoussemDellai/rbac-with-kubernetes-in-minikube-4deed658ea7b
  chmod 600 ~/.ssh/sta_key.pub
  cat ~/.ssh/sta_key.pub >> ~/.ssh/authorized_keys
  chmod 600 ~/.ssh/authorized_keys
- 
+ ls -l ~/.ssh/sta_key
+ exit
+ sudo cp /home/sta/.ssh/sta_key /home/ubuntu/ #from ubuntu
+ sudo chmod 644 /home/ubuntu/sta_key  # Make it readable for download
+ sudo chown ubuntu:ubuntu /home/ubuntu/sta_key  # Ensure the file is owned by ubuntu
+ scp -i .\original.pem ubuntu@ip:/home/ubuntu/sta_key C:\download\ #from exernal terminal
+ ssh -i C:\Users\User\Downloads\sta_key sta@ip
+
+
 ```
