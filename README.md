@@ -147,7 +147,7 @@ https://medium.com/@subhampradhan966/implementing-and-verifying-kubernetes-servi
 
 https://medium.com/@HoussemDellai/rbac-with-kubernetes-in-minikube-4deed658ea7b 
 
-## Assignment-3 (EC2 access for multi-user)
+## Assignment-3 (give EC2 access for multi-user)
 ```
  sudo adduser sta --disabled-password
  sudo su - sta
