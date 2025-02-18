@@ -169,5 +169,5 @@ https://medium.com/@HoussemDellai/rbac-with-kubernetes-in-minikube-4deed658ea7b
  ssh -i C:\Users\User\Downloads\sta_key sta@ip
 
 ```
-## Assignment-4 (EKS)
+## Assignment-4 (SFTP)
 
