@@ -201,7 +201,7 @@ Match User sftpuser
  cat ~/.ssh/id_rsa.pub #copy
  ssh ubuntu@ServerB
  echo "PASTE_THE_PUBLIC_KEY_HERE" >> ~/.ssh/authorized_keys
- chmod 600 ~/.ssh/authorized_keys
+ chmod 600 ~/.ssh/authorized_keys  # option (chmod 700 ~/.ssh)
  
  from ServerA
  ssh ubuntu@ServerB #If it logs in without a password, it’s working! ✅
@@ -233,6 +233,5 @@ chmod 755 /home/ubuntu/backup
 
 ssh ubuntu@ServerB
 ls /home/ubuntu/backup
-
 
 ```
