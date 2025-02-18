@@ -168,5 +168,5 @@ https://medium.com/@HoussemDellai/rbac-with-kubernetes-in-minikube-4deed658ea7b
  scp -i .\original.pem ubuntu@ip:/home/ubuntu/sta_key C:\download\ #from exernal terminal
  ssh -i C:\Users\User\Downloads\sta_key sta@ip
 
-
 ```
+## Assignment-4 (EKS)
