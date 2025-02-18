@@ -153,7 +153,7 @@ https://medium.com/@HoussemDellai/rbac-with-kubernetes-in-minikube-4deed658ea7b
  sudo su - sta
  mkdir ~/.ssh
  chmod 700 ~/.ssh
- ssh-keygen -t rsa -b 2048 -f ~/.ssh/sta_key
+ ssh-keygen -t rsa -b 2048 -f ~/.ssh/sta_key #it Generate privatekey and publickey
  ls ~/.ssh
  chmod 700 ~/.ssh
  chmod 600 ~/.ssh/sta_key
