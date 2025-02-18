@@ -192,4 +192,7 @@ Match User sftpuser
     AllowTcpForwarding no
     X11Forwarding no
 
+ sudo systemctl restart ssh
+ sftp sftpuser@your-ec2-public-ip
+
 ```
