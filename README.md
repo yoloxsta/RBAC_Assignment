@@ -170,4 +170,26 @@ https://medium.com/@HoussemDellai/rbac-with-kubernetes-in-minikube-4deed658ea7b
 
 ```
 ## Assignment-4 (SFTP)
+```
+ sudo apt-get update
+ sudo apt-get install openssh-server
+ sudo systemctl enable ssh
+ sudo systemctl start ssh
+ sudo systemctl status ssh
+ sudo adduser sftpuser
+ sudo mkdir -p /home/sftpuser/uploads
+ sudo chown root:root /home/sftpuser
+ sudo chmod 755 /home/sftpuser
+ sudo chown sftpuser:sftpuser /home/sftpuser/uploads
+ sudo nano /etc/ssh/sshd_config
 
+Match User sftpuser
+    ForceCommand internal-sftp
+    PasswordAuthentication yes
+    ChrootDirectory /home/sftpuser
+    PermitTunnel no
+    AllowAgentForwarding no
+    AllowTcpForwarding no
+    X11Forwarding no
+
+```
