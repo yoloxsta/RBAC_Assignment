@@ -231,6 +231,8 @@ chmod 755 /home/ubuntu/backup
 
 /home/ubuntu/sftp_transfer.sh #manual running(ServerA)
 
+ssh ubuntu@ServerB
+ls /home/ubuntu/backup
 
 
 ```
