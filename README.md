@@ -195,4 +195,42 @@ Match User sftpuser
  sudo systemctl restart ssh
  sftp sftpuser@your-ec2-public-ip
 
+#cron
+ ssh ubuntu@ServerA
+ ssh-keygen -t rsa -b 4096
+ cat ~/.ssh/id_rsa.pub #copy
+ ssh ubuntu@ServerB
+ echo "PASTE_THE_PUBLIC_KEY_HERE" >> ~/.ssh/authorized_keys
+ chmod 600 ~/.ssh/authorized_keys
+ 
+ from ServerA
+ ssh ubuntu@ServerB #If it logs in without a password, it’s working! ✅
+
+on ServerA
+nano /home/ubuntu/sftp_transfer.sh
+
+#!/bin/bash
+
+SOURCE_DIR="/home/ubuntu/uploads"   # Directory on ServerA
+DEST_DIR="/home/ubuntu/backup"      # Directory on ServerB
+DEST_USER="ubuntu"
+DEST_IP="ServerB"
+
+sftp -i /home/ubuntu/.ssh/id_rsa $DEST_USER@$DEST_IP <<EOF
+mkdir -p $DEST_DIR
+cd $DEST_DIR
+put $SOURCE_DIR/*
+bye
+EOF
+
+chmod +x /home/ubuntu/sftp_transfer.sh
+
+mkdir -p /home/ubuntu/backup #on ServerB
+chown ubuntu:ubuntu /home/ubuntu/backup
+chmod 755 /home/ubuntu/backup
+
+/home/ubuntu/sftp_transfer.sh #manual running(ServerA)
+
+
+
 ```
