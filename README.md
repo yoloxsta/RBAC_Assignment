@@ -195,7 +195,7 @@ Match User sftpuser
  sudo systemctl restart ssh
  sftp sftpuser@your-ec2-public-ip
 
-#cron
+#cron (Transfer to other server)
  ssh ubuntu@ServerA
  ssh-keygen -t rsa -b 4096
  cat ~/.ssh/id_rsa.pub #copy
