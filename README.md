@@ -235,4 +235,13 @@ ssh ubuntu@ServerB
 ls /home/ubuntu/backup
 
 ```
-##Assignment-4 (EKS)
+##Assignment-4 (Kafka)
+### Core Components of Apache Kafka
+- Producer: Producers are applications that send records to Kafka topics. They are responsible for choosing which partition within the topic the record should be sent to.
+- Consumer: Consumers are applications that read records from Kafka topics. Consumers subscribe to topics and process the messages in real time.
+- Broker: A Kafka broker is a server that runs Kafka. Brokers receive messages from producers, store them on disk, and serve them to consumers. A Kafka cluster consists of multiple brokers to ensure load balancing and fault tolerance.
+- Topic: A topic is a logical channel to which producers send records and from which consumers read. Topics are partitioned for scalability and parallelism.
+- Partition: Each topic is divided into partitions, which are ordered, immutable sequences of records. Partitions allow Kafka to scale horizontally and maintain the order of records within each partition.
+- ZooKeeper: Kafka uses Apache ZooKeeper for distributed coordination, configuration management, and leader election for Kafka brokers and topics.
+
+
