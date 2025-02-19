@@ -237,6 +237,7 @@ ls /home/ubuntu/backup
 ```
 ##Assignment-4 (Kafka)
 ### Core Components of Apache Kafka
+![alt text](ddpjeacdeubhyzfvswhe.jpg)
 - Producer: Producers are applications that send records to Kafka topics. They are responsible for choosing which partition within the topic the record should be sent to.
 - Consumer: Consumers are applications that read records from Kafka topics. Consumers subscribe to topics and process the messages in real time.
 - Broker: A Kafka broker is a server that runs Kafka. Brokers receive messages from producers, store them on disk, and serve them to consumers. A Kafka cluster consists of multiple brokers to ensure load balancing and fault tolerance.
