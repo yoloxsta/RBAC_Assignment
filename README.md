@@ -235,7 +235,7 @@ ssh ubuntu@ServerB
 ls /home/ubuntu/backup
 
 ```
-##Assignment-4 (Kafka)
+## Assignment-4 (Kafka)
 ### Core Components of Apache Kafka
 ![alt text](ddpjeacdeubhyzfvswhe.jpg)
 - Producer: Producers are applications that send records to Kafka topics. They are responsible for choosing which partition within the topic the record should be sent to.
