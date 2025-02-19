@@ -237,7 +237,7 @@ ls /home/ubuntu/backup
 ```
 ## Assignment-4 (Kafka)
 ### Core Components of Apache Kafka
-<img src="ddpjeacdeubhyzfvswhe.jpg" alt="Image description" width="300" height="200">
+<img src="ddpjeacdeubhyzfvswhe.jpg" alt="Image description" width="600" height="200">
 
 - Producer: Producers are applications that send records to Kafka topics. They are responsible for choosing which partition within the topic the record should be sent to.
 - Consumer: Consumers are applications that read records from Kafka topics. Consumers subscribe to topics and process the messages in real time.
