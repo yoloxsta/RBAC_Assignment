@@ -254,3 +254,20 @@ Kafka's architecture revolves around topics, partitions, and brokers. Here's a b
 - ZooKeeper Coordination: ZooKeeper manages the configuration and coordination of Kafka brokers. It helps in leader election for partitions and keeps track of broker metadata. However, newer versions of Kafka (starting from version 2.8) are moving towards removing ZooKeeper dependency with the introduction of the KRaft mode.
 
 ## Assignment-5 (Linux Challenges)
+
+```
+sudo -i
+yum install -y lvm2
+groupadd dba_users
+usermod -G dba_users bob
+pvcreate /dev/vdb
+pvcreate /dev/vdc
+vgcreate dba_storage /dev/vdb /dev/vdc
+lvcreate -n volume_1 -l 100%FREE dba_storage
+mkfs.xfs /dev/dba_storage/volume_1
+mkdir -p /mnt/dba_storage
+mount -t xfs /dev/dba_storage/volume_1 /mnt/dba_storage
+echo "/dev/mapper/dba_storage-volume_1 /mnt/dba_storage xfs defaults 0 0" >> /etc/fstab
+
+
+```
