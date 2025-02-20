@@ -268,6 +268,7 @@ mkfs.xfs /dev/dba_storage/volume_1
 mkdir -p /mnt/dba_storage
 mount -t xfs /dev/dba_storage/volume_1 /mnt/dba_storage
 echo "/dev/mapper/dba_storage-volume_1 /mnt/dba_storage xfs defaults 0 0" >> /etc/fstab
-
+chown :dba_users /mnt/dba_storage
+chmod 770 /mnt/dba_storage
 
 ```
