@@ -249,4 +249,5 @@ ls /home/ubuntu/backup
 ### Kafka Architecture
 Kafka's architecture revolves around topics, partitions, and brokers. Here's a breakdown of the key architectural elements:
 - Topics and Partitions: Topics are divided into partitions, which are the fundamental unit of parallelism and scalability in Kafka. Each partition is an ordered, immutable sequence of records, and each record within a partition is assigned a unique offset. Partitions enable Kafka to scale by distributing data and load across multiple brokers.
+- Producers and Consumers: Producers write data to Kafka topics, and consumers read data from topics. Kafka supports a publish-subscribe model where multiple consumers can subscribe to the same topic and process the data independently.
 - 
