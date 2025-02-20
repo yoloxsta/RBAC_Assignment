@@ -246,3 +246,7 @@ ls /home/ubuntu/backup
 - Partition: Each topic is divided into partitions, which are ordered, immutable sequences of records. Partitions allow Kafka to scale horizontally and maintain the order of records within each partition.
 - ZooKeeper: Kafka uses Apache ZooKeeper for distributed coordination, configuration management, and leader election for Kafka brokers and topics.
 
+### Kafka Architecture
+Kafka's architecture revolves around topics, partitions, and brokers. Here's a breakdown of the key architectural elements:
+- Topics and Partitions: Topics are divided into partitions, which are the fundamental unit of parallelism and scalability in Kafka. Each partition is an ordered, immutable sequence of records, and each record within a partition is assigned a unique offset. Partitions enable Kafka to scale by distributing data and load across multiple brokers.
+- 
