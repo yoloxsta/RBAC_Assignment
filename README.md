@@ -262,7 +262,7 @@ groupadd dba_users
 usermod -G dba_users bob
 pvcreate /dev/vdb #Create a Physical Volume for "/dev/vdb"
 pvcreate /dev/vdc #Create a Physical Volume for "/dev/vdc"
-vgcreate dba_storage /dev/vdb /dev/vdc
+vgcreate dba_storage /dev/vdb /dev/vdc #Create a volume group called "dba_storage" using the physical volumes "/dev/vdb" and "/dev/vdc"
 lvcreate -n volume_1 -l 100%FREE dba_storage
 mkfs.xfs /dev/dba_storage/volume_1
 mkdir -p /mnt/dba_storage
