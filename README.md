@@ -260,8 +260,8 @@ sudo -i
 yum install -y lvm2
 groupadd dba_users
 usermod -G dba_users bob
-pvcreate /dev/vdb
-pvcreate /dev/vdc
+pvcreate /dev/vdb #Create a Physical Volume for "/dev/vdb"
+pvcreate /dev/vdc #Create a Physical Volume for "/dev/vdc"
 vgcreate dba_storage /dev/vdb /dev/vdc
 lvcreate -n volume_1 -l 100%FREE dba_storage
 mkfs.xfs /dev/dba_storage/volume_1
