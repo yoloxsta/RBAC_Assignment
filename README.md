@@ -264,7 +264,7 @@ pvcreate /dev/vdb #Create a Physical Volume for "/dev/vdb"
 pvcreate /dev/vdc #Create a Physical Volume for "/dev/vdc"
 vgcreate dba_storage /dev/vdb /dev/vdc #Create a volume group called "dba_storage" using the physical volumes "/dev/vdb" and "/dev/vdc"
 lvcreate -n volume_1 -l 100%FREE dba_storage
-mkfs.xfs /dev/dba_storage/volume_1
+mkfs.xfs /dev/dba_storage/volume_1 #Format the lvm volume "volume_1" as an "XFS" filesystem
 mkdir -p /mnt/dba_storage
 mount -t xfs /dev/dba_storage/volume_1 /mnt/dba_storage
 echo "/dev/mapper/dba_storage-volume_1 /mnt/dba_storage xfs defaults 0 0" >> /etc/fstab
