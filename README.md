@@ -274,3 +274,21 @@ chown :dba_users /mnt/dba_storage
 chmod 770 /mnt/dba_storage
 
 ```
+#### Challenges-2
+```
+sudo su -
+sed '1inameserver 8.8.8.8' /etc/resolv.conf > /tmp/resolv.conf
+yum install -y nginx firewalld
+systemctl enable firewalld
+systemctl start firewalld
+# Add firewall rules to allow only incoming port "22", "80" and "8081" and make permanent
+firewall-cmd --zone=public --add-port=80/tcp --permanent
+firewall-cmd --zone=public --add-port=8081/tcp --permanent
+firewall-cmd --zone=public --add-port=22/tcp --permanent
+firewall-cmd --reload
+
+```
+
+
+
+
