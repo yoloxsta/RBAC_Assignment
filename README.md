@@ -287,6 +287,26 @@ firewall-cmd --zone=public --add-port=8081/tcp --permanent
 firewall-cmd --zone=public --add-port=22/tcp --permanent
 firewall-cmd --reload
 
+pushd /home/bob/go-app
+nohup go run main.go &
+
+# Wait for it to be running (usually 15-20 seconds as it has to compile first)
+while ! ps -faux | grep -P '/tmp/go-build\d+/\w+/exe/main'
+do
+    sleep 2
+done
+sleep 2
+popd
+
+# Configure Nginx as a reverse proxy for the GoApp so that we can access the GoApp on port "80"
+# Do this by inserting a proxy_pass line after "location / {" at line 48
+sed -i '48i\            proxy_pass  http://localhost:8081;' /etc/nginx/nginx.conf
+
+# Start nginx
+systemctl enable nginx
+systemctl start nginx
+systemctl status nginx
+
 ```
 
 
