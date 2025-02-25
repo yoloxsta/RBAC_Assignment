@@ -308,7 +308,7 @@ systemctl start nginx
 systemctl status nginx
 
 ```
-##
+#
 
 
 
