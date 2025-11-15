@@ -7,7 +7,6 @@
 minikube start
 kubectl cluster-info #check status
 ```
-
 ### Step 2: Create Admin and Read-Only Roles
 Kubernetes already has a built-in ClusterRole called cluster-admin. We’ll use that for the admin user.
 Save the following as read-only-role.yaml
