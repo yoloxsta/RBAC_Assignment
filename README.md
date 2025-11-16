@@ -42,6 +42,7 @@ openssl x509 -req -in admin.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out ad
 openssl x509 -req -in baby.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out baby.crt -days 365
 ```
 ### Step 4: Configure Kubernetes Users
+
 #### 4.1 Add Users to Kubeconfig
 ```
 kubectl config set-credentials admin \
