@@ -44,6 +44,7 @@ openssl x509 -req -in baby.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out bab
 ### Step 4: Configure Kubernetes Users
 
 #### 4.1 Add Users to Kubeconfig
+
 ```
 kubectl config set-credentials admin \
   --client-certificate=admin.crt \
