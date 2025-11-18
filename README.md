@@ -127,7 +127,6 @@ scp baby.crt baby.key ca.crt user@baby-machine:/path/to/certs/
 kubectl config set-credentials baby --client-certificate=/path/to/certs/baby.crt --client-key=/path/to/certs/baby.key
 kubectl config set-context baby-context --cluster=minikube --user=baby
 kubectl config use-context baby-context
-
 ```
 ### Step 4: Optional - Enable Remote Access
 If your Minikube cluster is running locally and you want baby to access it from a different machine, you need to expose the Minikube API externally.
