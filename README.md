@@ -123,7 +123,6 @@ scp baby.crt baby.key ca.crt user@baby-machine:/path/to/certs/
 ```
 ### Step 3: Configure baby's Kubeconfig on Their Machine
 ```
-
 kubectl config set-credentials baby --client-certificate=/path/to/certs/baby.crt --client-key=/path/to/certs/baby.key
 kubectl config set-context baby-context --cluster=minikube --user=baby
 kubectl config use-context baby-context
