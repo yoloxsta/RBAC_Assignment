@@ -20,7 +20,6 @@ rules:
   resources: ["*"]
   verbs: ["get", "list", "watch"]
 ```
-
 ### Step 3: Create Admin and Baby Users
 Kubernetes doesn’t manage normal users directly — but you can simulate users with certificates.
 
