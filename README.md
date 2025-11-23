@@ -90,6 +90,7 @@ roleRef:
 ### Step 6: Test the Access
 
 #### 6.1 Test as Admin
+
 ```
 kubectl config use-context admin-context
 kubectl get pods --all-namespaces
